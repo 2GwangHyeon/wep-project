@@ -1,0 +1,27 @@
+.header.clearfix.fixed-top.text-center
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      a.navbar-brand(href="/")
+        img.d-inline-block.align-top(src="/images/logo.png", alt="logo", width="30", height="30")
+        a.navbar-brand(href="/")  팡팡투어
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link(href="/MyTour") 나의 여행
+
+          if (!currentUser) 
+            li.nav-item
+              a.nav-link(href='/signin') 로그인
+            li.nav-item
+              a.nav-link(href='/users/new') 회원가입
+          else
+            li.nav-item
+              a.nav-link(href=`/users/${currentUser._id}`) 나의 정보
+            li.nav-item
+              a.nav-link(href='/signout') 로그아웃
+              
+        
+          
